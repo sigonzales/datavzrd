@@ -1,9 +1,10 @@
 # Reporte interactivo de variantes CYP en pacientes con esquizofrenia resistente al tratamiento, tratados con clozapina  
-**Bioinformática – Data Visualization**  
+**Maestría en Bioinformática – Curso: De la Visualización a la Reproducibilidad: Ciencia de Datos en Bioinformática**  
 Proyecto realizado con **DataVzrd (2025)**
 
 Este repositorio contiene un reporte interactivo generado con **DataVzrd**, donde se visualizan datos clínicos, farmacogenómicos y genéticos de una cohorte de 47 pacientes tratados con clozapina en Uruguay.  
 Incluye análisis de variantes individuales (SNPs), haplotipos y perfiles metabolizadores de los genes **CYP1A2, CYP2C19, CYP2D6 y CYP3A4**.
+
 ---
 
 ## Contenido del repositorio
@@ -50,5 +51,7 @@ datavzrd clozapina.yaml --output reporte_clozapina --overwrite-output
 
 ## Autora
 Sofía Gonzales Magallanes
+
 Unidad de Bioinformática – Institut Pasteur de Montevideo
+
 GitHub: @sigonzales
