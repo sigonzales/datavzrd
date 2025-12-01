@@ -1,0 +1,25 @@
+﻿Gen;Haplotipo;Cromosoma;Funcion;Conteo;Total;Frecuencia;PharmFreq_European;PharmFreq_NorthAmerican;PharmFreq_SouthAmerican;PharmFreq_MiddleEast_NorthAfrica;comp_PharmFreq_European;comp_PharmFreq_NorthAmerican;comp_PharmFreq_SouthAmerican;comp_PharmFreq_MiddleEast_NorthAfrica
+CYP1A2;*1;chr15;normal;26;94;0.2766;;;;;;;;
+CYP1A2;*30;chr15;increased;68;94;0.7234;0.325;;;;Diferente;;;
+CYP2C19;*1;chr10;normal;55;94;0.5851;0.618;0.567;0.669;0.66;Similar;Similar;Similar;Similar
+CYP2C19;*2;chr10;no function;17;94;0.1809;0.148;0.146;0.13;0.115;Similar;Similar;Similar;Similar
+CYP2C19;*6;chr10;increased;1;94;0.0106;0.00031;0.00025;0;0.00016;Similar;Similar;;Similar
+CYP2C19;*17;chr10;increased;18;94;0.1915;0.221;0.217;0.18;0.217;Similar;Similar;Similar;Similar
+CYP2C19;*38;chr10;normal;3;94;0.0319;;0.061;;;;Similar;;
+CYP2D6;*1;chr22;normal;38;94;0.4043;0.324;0.339;0.338;0.294;Similar;Similar;Similar;Similar
+CYP2D6;*2;chr22;normal;15;94;0.1596;0.217;0.161;0.209;0.184;Similar;Similar;Similar;Similar
+CYP2D6;*4;chr22;no function;12;94;0.1277;0.167;0.163;0.119;0.094;Similar;Similar;Similar;Similar
+CYP2D6;*6;chr22;no function;1;94;0.0106;0.011;0.01;0.003;0.005;Similar;Similar;Similar;Similar
+CYP2D6;*9;chr22;decreased;2;94;0.0213;0.02;0.025;0.011;0.002;Similar;Similar;Similar;Similar
+CYP2D6;*10;chr22;decreased;3;94;0.0319;0.006;0.017;0.021;0.049;Similar;Similar;Similar;Similar
+CYP2D6;*35;chr22;normal;5;94;0.0532;0.056;0.035;0.024;0.032;Similar;Similar;Similar;Similar
+CYP2D6;*39;chr22;normal;1;94;0.0106;0.00068;0.00057;0.011;0.027;Similar;Similar;Similar;Similar
+CYP2D6;*41;chr22;decreased;12;94;0.1277;0.097;0.083;0.054;0.151;Similar;Similar;Similar;Similar
+CYP2D6;*56;chr22;no function;1;94;0.0106;0.00005;0.00009;0;0;Diferente;Similar;;
+CYP2D6;*65;chr22;uncertain function;1;94;0.0106;0;;;0;;;;
+CYP2D6;*106;chr22;unknown function;1;94;0.0106;0.00007;0.00072;0;0.00066;Diferente;Similar;;Similar
+CYP2D6;*139;chr22;unknown function;2;94;0.0213;;;;;;;;
+CYP3A4;*1;chr7;normal;89;94;0.9468;;;;;;;;
+CYP3A4;*3;chr7;function not assigned;1;94;0.0106;;;;;;;;
+CYP3A4;*20;chr7;function not assigned;2;94;0.0213;;;;;;;;
+CYP3A4;*22;chr7;decreased;2;94;0.0213;;;;;;;;

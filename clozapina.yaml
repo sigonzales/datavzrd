@@ -1,0 +1,848 @@
+name: Reporte clozapina – Agosto 2025
+
+default-view: pacientes
+
+datasets:
+  pacientes:
+    path: data/tabla_clozapina_agosto2025.csv
+    separator: ";"
+    headers: 1
+
+  haplotipos:
+    path: data/samples47_comparaciones_haplotipos.csv
+    separator: ";"
+    headers: 1
+    links:
+      SNPs por gen:
+        column: Gen
+        table-row: snps/Gene
+
+  snps:
+    path: data/samples47_comparaciones_snps.csv
+    separator: ";"
+    headers: 1
+
+views:
+  pacientes:
+    dataset: pacientes
+    desc: |
+      Vista general de los pacientes, con información clínica básica,
+      sugerencias farmacocinéticas, genotipos y perfiles metabolizadores de los genes CYP.
+
+    render-table:
+      columns:
+        Sample:
+          label: Muestra
+
+        Cintura:
+          display-mode: hidden
+        DNORMA:
+          display-mode: hidden
+        
+
+        Sexo: {}
+
+        Edad:
+          plot:
+            ticks:
+              scale: linear
+
+        Peso:
+          plot:
+            ticks:
+              scale: linear
+
+        Altura:
+          plot:
+            ticks:
+              scale: linear
+        IMC:
+          plot:
+            ticks:
+              scale: linear
+        IMCtipo:
+          display-mode: hidden
+
+        Obeso: {}
+
+        BDZ:
+          label: Benzodiazepina
+
+        Cafe:
+          label: Café
+
+        Cafe_ml:
+          display-mode: hidden
+        Cafe_cat:
+          display-mode: hidden
+
+        Te:
+          label: Té
+
+        Te_ml:
+          display-mode: hidden
+        
+        Te_cat:
+          display-mode: hidden
+
+        Hierbas:
+          display-mode: hidden
+
+        Yerba: {}
+
+        Yerba_ml:
+          display-mode: hidden
+        Yerba_cat:
+          display-mode: hidden
+
+        Tabaco: {}
+
+        Cigarros:
+          display-mode: hidden
+        Cigarro_num:
+          display-mode: hidden
+        Cantcig2:
+          display-mode: hidden
+        Cigarro_cat:
+          display-mode: hidden
+
+        Dosis_Total:
+          label: Dosis total (mg/día)
+          plot:
+            ticks:
+              scale: linear
+        
+        Dosis_cat:
+          display-mode: hidden
+
+        CLZ:
+          label: Nivel CLZ
+          plot:
+            ticks:
+              scale: linear
+
+        NCLZ:
+          label: Nivel NCLZ
+          plot:
+            ticks:
+              scale: linear
+
+        Glicemia:
+          plot:
+            ticks:
+              scale: linear
+        
+        Trigliceridos:
+          plot:
+            ticks:
+              scale: linear
+
+        HDL:
+          plot:
+            ticks:
+              scale: linear
+        
+        SM_ALAD:
+          display-mode: hidden
+
+        Rango_Terap:
+          label: Rango terapéutico
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Encima", "Rango", "Debajo"]
+              range: ["green", "yellow", "red"]
+
+        Vaselina_Lact:
+          label: Vaselina / Lactulosa
+        
+        CLZ_NCLZ:
+          display-mode: hidden
+        
+        NCLZ_CLZ:
+          display-mode: hidden
+        
+        CLZ_D:
+          display-mode: hidden
+        
+        CLZ_DNORM:
+          display-mode: hidden
+        
+        THC:
+          display-mode: hidden
+
+        Sugerencia_PK:
+          label: Sugerencia Farmacocinéticas
+
+
+        Sugerencia_IP:
+          label: Sugerencia IPMon
+
+
+        CYP1A2_Genotype:
+          label: CYP1A2 genotipo
+
+        CYP1A2_Metabolizador:
+          label: CYP1A2 metabolizador
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Intermedio", "Normal", "Pobre", "Ultra rapido", "Uncertain", "Unknown", "rapido"]
+              range: ["blue", "orange", "red", "cyan", "green", "yellow", "purple"]
+        
+        CYP1A2_1:
+          display-mode: hidden
+        CYP1A2_30:
+          display-mode: hidden
+
+        CYP2C19_Genotype:
+          label: CYP2C19 genotipo
+
+        CYP2C19_Metabolizador:
+          label: CYP2C19 metabolizador
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Intermedio", "Normal", "Pobre", "Ultra rapido", "Uncertain", "Unknown", "rapido"]
+              range: ["blue", "orange", "red", "cyan", "green", "yellow", "purple"]
+        CYP2C19_1:
+          display-mode: hidden
+        CYP2C19_2:
+          display-mode: hidden
+        CYP2C19_6:
+          display-mode: hidden
+        CYP2C19_17:
+          display-mode: hidden
+        CYP2C19_38:
+          display-mode: hidden
+        CYP2D6_Genotype:
+          label: CYP2D6 genotipo
+
+        CYP2D6_Metabolizador:
+          label: CYP2D6 metabolizador
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Intermedio", "Normal", "Pobre", "Ultra rapido", "Uncertain", "Unknown", "rapido"]
+              range: ["blue", "orange", "red", "cyan", "green", "yellow", "purple"]
+
+        CYP2D6_1:
+          display-mode: hidden
+        CYP2D6_2:
+          display-mode: hidden
+        CYP2D6_3:
+          display-mode: hidden
+        CYP2D6_4:
+          display-mode: hidden
+        CYP2D6_6:
+          display-mode: hidden
+        CYP2D6_9:
+          display-mode: hidden
+        CYP2D6_10:
+          display-mode: hidden
+        CYP2D6_35:
+          display-mode: hidden
+        CYP2D6_39:
+          display-mode: hidden
+        CYP2D6_41:
+          display-mode: hidden
+        CYP2D6_56:
+          display-mode: hidden
+        CYP2D6_65:
+          display-mode: hidden
+        CYP2D6_106:
+          display-mode: hidden
+        CYP2D6_139:
+          display-mode: hidden
+
+        CYP3A4_Genotype:
+          label: CYP3A4 genotipo
+
+        CYP3A4_Metabolizador:
+          label: CYP3A4 metabolizador
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Intermedio", "Normal", "Pobre", "Ultra rapido", "Uncertain", "Unknown", "rapido"]
+              range: ["blue", "orange", "red", "cyan", "green", "yellow", "purple"]
+        CYP3A4_1:
+          display-mode: hidden
+        CYP3A4_3:
+          display-mode: hidden
+        CYP3A4_20:
+          display-mode: hidden
+        CYP3A4_22:
+          display-mode: hidden
+        NCLZ_DNORM:
+          display-mode: hidden
+        Xantinas:
+          display-mode: hidden
+
+  Metabolizadores_plot:
+    dataset: pacientes
+    desc: |
+      Distribución de perfiles de metabolizador por gen.
+      Cada panel muestra los perfiles para un gen, con la altura de la barra
+      proporcional a la frecuencia del perfil en la cohorte.
+
+    render-plot:
+      spec: |
+        {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "data": {"name": "table"},
+
+          "transform": [
+            {
+              "fold": [
+                "CYP1A2_Metabolizador",
+                "CYP2C19_Metabolizador",
+                "CYP2D6_Metabolizador",
+                "CYP3A4_Metabolizador"
+              ],
+              "as": ["GenCol", "Perfil"]
+            },
+            {
+              "calculate": "replace(datum.GenCol, '_Metabolizador', '')",
+              "as": "Gen"
+            },
+            {
+              "aggregate": [
+                {"op": "count", "as": "n"}
+              ],
+              "groupby": ["Gen", "Perfil"]
+            },
+            {
+              "joinaggregate": [
+                {"op": "sum", "field": "n", "as": "total_gen"}
+              ],
+              "groupby": ["Gen"]
+            },
+            {
+              "calculate": "datum.n / datum.total_gen",
+              "as": "prop"
+            }
+          ],
+
+          "facet": {
+            "column": {
+              "field": "Gen",
+              "type": "nominal",
+              "title": null
+            }
+          },
+
+          "spec": {
+            "mark": {"type": "bar", "tooltip": true},
+            "encoding": {
+              "y": {
+                "field": "Perfil",
+                "type": "nominal",
+                "title": null
+              },
+              "x": {
+                "field": "prop",
+                "type": "quantitative",
+                "title": "Frecuencia proporcional",
+                "axis": {"format": "0%"}
+              },
+              "color": {
+                "field": "Perfil",
+                "type": "nominal",
+                "title": "Perfil"
+              }
+            }
+          },
+
+          "resolve": {
+            "scale": {"x": "independent"}
+          },
+
+          "config": {
+            "axis": {
+              "labelFontSize": 11,
+              "titleFontSize": 12
+            },
+            "legend": {
+              "titleFontSize": 12,
+              "labelFontSize": 11
+            }
+          }
+        }
+
+  
+  
+  haplotipos:
+    dataset: haplotipos
+    desc: |
+      Frecuencias de haplotipos por gen en la cohorte, con comparación
+      frente a diferentes poblaciones de referencia.
+
+    render-table:
+      columns:
+        Gen:
+          link-to-url:
+            PharmaVar:
+              url: https://www.pharmvar.org/gene/{value}
+
+        Haplotipo: {}
+
+        Cromosoma:
+          label: Cromosoma
+
+        Funcion:
+          label: Función
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["increased", "normal", "no function","uncertain function", "unknown function", "function not assigned", "decreased"]
+              range: ["red", "green", "cyan", "yellow", "purple", "orange", "blue"]
+          
+
+        Conteo:
+          plot:
+            ticks:
+              scale: linear
+
+        Total: {}
+
+        Frecuencia:
+          plot:
+            bars:
+              scale: linear
+
+        PharmFreq_European:
+          label: Freq. Europa (PharmVar)
+          plot:
+            bars:
+              scale: linear
+
+        PharmFreq_NorthAmerican:
+          label: Freq. Norteamérica (PharmVar)
+          plot:
+            bars:
+              scale: linear
+
+        PharmFreq_SouthAmerican:
+          label: Freq. Sudamérica (PharmVar)
+          plot:
+            bars:
+              scale: linear
+
+        PharmFreq_MiddleEast_NorthAfrica:
+          label: Freq. Oriente Medio/NorÁfrica (PharmVar)
+          plot:
+            bars:
+              scale: linear
+
+        comp_PharmFreq_European:
+          label: Comp. Europa
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+
+        comp_PharmFreq_NorthAmerican:
+          label: Comp. Norteamérica
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_PharmFreq_SouthAmerican:
+          label: Comp. Sudamérica
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_PharmFreq_MiddleEast_NorthAfrica:
+          label: Comp. Oriente Medio/NorÁfrica
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+  Haplotipos_plot:
+    dataset: haplotipos
+    desc: |
+      Distribución de frecuencias de haplotipos por gen.
+      Cada panel muestra los haplotipos de un gen, con el color según la función.
+
+    render-plot:
+      spec: |
+        {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+          "facet": {
+            "field": "Gen",
+            "type": "nominal",
+            "columns": 2,
+            "title": null
+          },
+
+          "spec": {
+            "width": 250,
+            "height": {"step": 18},
+
+            "mark": {
+              "type": "bar",
+              "tooltip": true
+            },
+
+            "encoding": {
+              "y": {
+                "field": "Haplotipo",
+                "type": "nominal",
+                "sort": "-x",
+                "title": null
+              },
+              "x": {
+                "field": "Frecuencia",
+                "type": "quantitative",
+                "title": "Frecuencia",
+                "scale": {"domain": [0,1]},
+                "axis": {"format": ".0%"}
+              },
+              "color": {
+                "field": "Funcion",
+                "type": "nominal",
+                "title": "Función"
+              }
+            }
+          },
+
+          "config": {
+            "view": {"stroke": "transparent"},
+            "axis": {
+              "labelFontSize": 10,
+              "titleFontSize": 11
+            },
+            "legend": {
+              "orient": "bottom",
+              "labelFontSize": 10,
+              "titleFontSize": 11
+            }
+          }
+        }
+
+  
+  snps:
+    dataset: snps
+    desc: |
+      Variantes individuales en genes CYP, con anotación funcional,
+      frecuencia en la cohorte y comparación con base de datos 1000G y gnomAD.
+
+    render-table:
+      columns:
+        ID: {}
+
+        avsnp151:
+          label: rsID
+          link-to-url:
+            NCBI:
+              url: https://www.ncbi.nlm.nih.gov/snp/{value}
+
+        Chr:
+          label: Cromosoma
+
+        Gene:
+          link-to-url:
+            PharmaVar:
+              url: https://www.pharmvar.org/gene/{value}
+
+        Start:
+          label: Posición inicial
+        End:
+          label: Posición final
+
+        Ref:
+          label: Alelo de referencia
+
+        Alt:
+          label: Alelo alternativo
+
+        Func.refGene:
+          label: Función génica
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+
+        ExonicFunc.refGene:
+          label: Función exónica
+          display-mode: hidden
+
+        ALT_FREQS_47:
+          label: Frecuencia en cohorte
+          plot:
+            bars:
+              scale: linear
+
+        OBS_CT:
+          label: Cromosomas observados
+        
+        Type:
+          label: Tipo de mutación
+        
+        Effect:
+          label: Efecto de la mutación
+
+      # Frecuencias 1000 Genomes 2015
+
+        1000g2015aug_all:
+          label: "1000G (2015) – Global"
+          plot:
+            bars:
+              scale: linear
+
+        1000g2015aug_eur:
+          label: "1000G (2015) – Europa"
+          plot:
+            bars:
+              scale: linear
+
+        1000g2015aug_afr:
+          label: "1000G (2015) – África"
+          plot:
+            bars:
+              scale: linear
+
+        1000g2015aug_amr:
+          label: "1000G (2015) – América mezclados"
+          plot:
+            bars:
+              scale: linear
+
+        1000g2015aug_eas:
+          label: "1000G (2015) – Este de Asia"
+          plot:
+            bars:
+              scale: linear
+        
+        # Frecuencias gnomAD 4.1 (genome)  
+
+        gnomad41_genome_AF:
+          label: gnomAD 4.1 - Global
+          plot:
+            bars:
+              scale: linear
+
+        gnomad41_genome_AF_amr:
+          label: gnomAD 4.1 - América mezclados 
+          plot:
+            bars:
+              scale: linear
+        gnomad41_genome_AF_afr:
+          label: gnomAD 4.1 - Africa
+          plot:
+            bars:
+              scale: linear
+        gnomad41_genome_AF_fin:
+          label: gnomAD 4.1 - Finlandia
+          plot:
+            bars:
+              scale: linear
+
+        gnomad41_genome_AF_nfe:
+          label: gnomAD 4.1 - Europa no finlandesa
+          plot:
+            bars:
+              scale: linear
+
+        gnomad41_genome_AF_sas:
+          label: gnomAD 4.1 - Sur de Asia
+          plot:
+            bars:
+              scale: linear
+        gnomad41_genome_AF_eas:
+          label: gnomAD 4.1 - Este de Asia
+          plot:
+            bars:
+              scale: linear
+
+        # Comparaciones con 1000G
+
+        comp_1000g2015aug_all:
+          label: Comp. 1000G - Global
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_1000g2015aug_eur:
+          label: Comp. 1000G - Europa
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_1000g2015aug_afr:
+          label: Comp. 1000G - Africa
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_1000g2015aug_amr:
+          label: Comp. 1000G - América mezclados
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_1000g2015aug_eas:
+          label: Comp. 1000G - Este de Asia
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+      
+      # Comparaciones principales (gnomAD 4.1)
+        comp_gnomad41_genome_AF:
+          label: Comp. gnomAD - Global
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_gnomad41_genome_AF_amr:
+          label: Comp. gnomAD - América mezclados
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_gnomad41_genome_AF_afr:
+          label: Comp. gnomAD - África
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_gnomad41_genome_AF_eas:
+          label: Comp. gnomAD - Este de Asia
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        comp_gnomad41_genome_AF_nfe:
+          label: Comp. gnomAD - Europa no finlandesa
+          plot:
+            heatmap:
+              scale: ordinal
+              domain: ["Similar", "Diferente"]
+              range: ["green", "red"]
+
+        cytoBand:
+          display-mode: hidden
+        genomicSuperDups:
+          display-mode: hidden
+        CLNSIG:
+          display-mode: hidden
+        CLNSIG.1:
+          display-mode: hidden
+        CLNDISDB:
+          display-mode: hidden
+        CLNREVSTAT:
+          display-mode: hidden
+        CLNDN.1:
+          display-mode: hidden
+        InterVar_automated:
+          display-mode: hidden
+        Kaviar_AF:
+          display-mode: hidden
+        Kaviar_AC:
+          display-mode: hidden
+        Kaviar_AN:
+          display-mode: hidden
+        Freq_alelica:
+          display-mode: hidden
+        Chromosome:
+          display-mode: hidden
+        POS:
+          display-mode: hidden
+        Gene.refGene:
+          display-mode: hidden
+        AAChange.refGene:
+          display-mode: hidden
+        GeneDetail.refGene:
+          display-mode: hidden
+        dbSNP:
+          display-mode: hidden
+
+
+        gnomad41_genome_AF_raw:
+          display-mode: hidden
+        gnomad41_genome_AF_XX:
+          display-mode: hidden
+        gnomad41_genome_AF_XY:
+          display-mode: hidden
+        gnomad41_genome_AF_grpmax:
+          display-mode: hidden
+        gnomad41_genome_faf95:
+          display-mode: hidden
+        gnomad41_genome_faf99:
+          display-mode: hidden
+        gnomad41_genome_fafmax_faf95_max:
+          display-mode: hidden
+        gnomad41_genome_fafmax_faf99_max:
+          display-mode: hidden
+        gnomad41_genome_AF_remaining:
+          display-mode: hidden
+        gnomad41_genome_AF_ami:
+          display-mode: hidden
+        gnomad41_genome_AF_mid:
+          display-mode: hidden
+        gnomad41_genome_AF_asj:
+          display-mode: hidden
+        AF:
+          display-mode: hidden
+        AF_raw:
+          display-mode: hidden
+        AF_male:
+          display-mode: hidden
+        AF_female:
+          display-mode: hidden
+        AF_afr:
+          display-mode: hidden
+        AF_ami:
+          display-mode: hidden
+        AF_amr:
+          display-mode: hidden
+        AF_asj:
+          display-mode: hidden
+        AF_eas:
+          display-mode: hidden
+        AF_fin:
+          display-mode: hidden
+        AF_nfe:
+          display-mode: hidden
+        AF_oth:
+          display-mode: hidden
+        AF_sas:
+          display-mode: hidden
+        comp_AF:
+          display-mode: hidden
+        comp_AF_amr:
+          display-mode: hidden
+        comp_AF_afr:
+          display-mode: hidden
+        comp_AF_eas:
+          display-mode: hidden
+        comp_AF_nfe:
+          display-mode: hidden

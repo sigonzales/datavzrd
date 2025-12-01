@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datavzrd</title>
+</head>
+<body>
+<script src="./static/bundle.js"></script>
+<script type="text/javascript">
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get('view');
+    const version = '2.61.10';
+    const name = 'Reporte clozapina – Agosto 2025';
+    const views = {"Haplotipos_plot":"Distribución de frecuencias de haplotipos por gen.\nCada panel muestra los haplotipos de un gen, con el color según la función.\n","Metabolizadores_plot":"Distribución de perfiles de metabolizador por gen.\nCada panel muestra los perfiles para un gen, con la altura de la barra\nproporcional a la frecuencia del perfil en la cohorte.\n","snps":"Variantes individuales en genes CYP, con anotación funcional,\nfrecuencia en la cohorte y comparación con base de datos 1000G y gnomAD.\n","pacientes":"Vista general de los pacientes, con información clínica básica,\nsugerencias farmacocinéticas, genotipos y perfiles metabolizadores de los genes CYP.\n","haplotipos":"Frecuencias de haplotipos por gen en la cohorte, con comparación\nfrente a diferentes poblaciones de referencia.\n"};
+    const table = "pacientes";
+    let redirectUrl = viewParam ? `${viewParam}/index_1.html` : `${table}/index_1.html`;
+    urlParams.delete('view');
+    const remainingParams = urlParams.toString();
+    if (remainingParams) redirectUrl += `?${remainingParams}`;
+    if (table || viewParam) {
+        window.location.href = redirectUrl;
+    } else {
+        datavzrd.landing_page();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>datavzrd report</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<script src="../static/bundle.js"></script>
+<div class="collapse" id="sidebar">
+    <div class="card" id="sidebar-card">
+        <ul class="list-group list-group-flush" id="sidebar-list">
+            
+            <li class="list-group-item sidebar-btn" id="markdown-btn" type="button" data-toggle="collapse" data-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">Show description</li>
+        </ul>
+    </div>
+</div>
+
+<div id="page-container">
+    <div id="content-wrap">
+        <div class="fixed-top">
+            <nav class="navbar navbar-expand navbar-light navbar-top">
+                <div class="collapse navbar-collapse" id="navbarText2">
+                    <ol class="navbar-nav mr-auto breadcrumb">
+                        <li class="breadcrumb-item"><div>Reporte clozapina – Agosto 2025</div></li>
+                        <li class="breadcrumb-item">
+                            <select id="view-selection" title="Haplotipos plot" data-width="fit" onchange="location = this.value;" data-live-search-placeholder="Filter..." class="selectpicker" data-style="select-view" data-live-search="true">
+                                
+                                <option value="../pacientes/index_1.html" data-content="pacientes <span class='badge badge-light'>47 rows rows</span>">pacientes</option>
+                                
+                                
+                                <option value="../Haplotipos_plot/index_1.html" data-content="Haplotipos plot ">Haplotipos plot</option>
+                                
+                                <option value="../Metabolizadores_plot/index_1.html" data-content="Metabolizadores plot ">Metabolizadores plot</option>
+                                
+                                <option value="../haplotipos/index_1.html" data-content="haplotipos <span class='badge badge-light'>24 rows rows</span>">haplotipos</option>
+                                
+                                <option value="../snps/index_1.html" data-content="snps <span class='badge badge-light'>64 rows rows</span>">snps</option>
+                                
+                            </select>
+                        </li>
+                    </ol>
+                </div>
+                <span class="pull-right">
+                    <button class="navbar-toggler" style="display: block !important;" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </span>
+            </nav>
+        </div>
+        <div class="container-fluid">
+            
+            <div class="row description-box">
+                <div class="col-md-12">
+                    <div class="collapse show" id="collapseDescription">
+                        <div class="card card-body description-card-body">
+                            <button id="close-description" type="button" data-toggle="collapse" data-target="#collapseDescription" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div id="innerDescription" data-markdown="Distribución de frecuencias de haplotipos por gen.
+Cada panel muestra los haplotipos de un gen, con el color según la función.
+"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center" id="vis-container">
+                    <div class="mt-auto mb-auto ml-auto mr-auto" id="vis"></div>
+                    <script>
+                        const specs = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "facet": {
+    "field": "Gen",
+    "type": "nominal",
+    "columns": 2,
+    "title": null
+  },
+
+  "spec": {
+    "width": 250,
+    "height": {"step": 18},
+
+    "mark": {
+      "type": "bar",
+      "tooltip": true
+    },
+
+    "encoding": {
+      "y": {
+        "field": "Haplotipo",
+        "type": "nominal",
+        "sort": "-x",
+        "title": null
+      },
+      "x": {
+        "field": "Frecuencia",
+        "type": "quantitative",
+        "title": "Frecuencia",
+        "scale": {"domain": [0,1]},
+        "axis": {"format": ".0%"}
+      },
+      "color": {
+        "field": "Funcion",
+        "type": "nominal",
+        "title": "Función"
+      }
+    }
+  },
+
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "labelFontSize": 10,
+      "titleFontSize": 11
+    },
+    "legend": {
+      "orient": "bottom",
+      "labelFontSize": 10,
+      "titleFontSize": 11
+    }
+  }
+}
+;
+                        
+                        const data = "᭠ᠭᠨ䀲ѐΠ㘧堥恫㶹᥀㢠匠癚‡‥嘠丢氣୰⁧ĚŤ˛⹾ǐ䬄净擭䁒奇⨪¢娥嗰̸ڶ⹫⼵塽⌶嘡㌈l✰௕䀬番怮Ⲻ䚌䁓ድ勛∮Ὓ䡰秊爕䪼抅㩌ᵳⷍ矰䥨崢⫡䢑㶹᫠e䛆搣䶨年㵑ᇉ峲掇㐑㯚劂婚势ᬷޯ䚰ضℲ倩壘溾ⵒ᫳ⴻ䃶㟧䬊ƪ員⑝Ꭸ䤷浀É冁ࣄJCᒻ倩卆Ứ¹⑘ᰃ塃稉礠Б!梎ČV㿡玛广០߆墨硕丯₨ጡ 竑䝏䊪䋱ࠠᾢ䝠਴∿ࣤÜᮨభ㶐瞭搮䱈橑急㉳၂৫␍⒗䀩怠奀N䈠䃧ᣙ伵禀ཛྷ⸛䘟㣜ٙṪ卜⧙䀠㍘寉䨵ឿ洐橞羨差綞ᯖ偍戁攳΀ၬ䩱寉㱞濖厑㋉䡁淈厐(崪牉䐡䈎ɝ䌀ᤋ呋䝅㤃ᜊዐٵᛋ䫐ᕕ圼૙⍶ៅ桺ᴨ䃰㡻❳ᒜ䳟㤇᜻ါ䲣㮔⸕Ƽ㬦ὐ㈽ۣ烤┶䒂壼㢴␳⠲㤇㯷唏倳智彠∄喚彆⑴暽⯍批嵓罿䡱З抭㥔箇䧑⹺來媭╗唊恑⻝告翯笎登ዘ疹₀ⶹ灊㷢⢠෤穆湨媎啯槡㹢棎㫠᭎䱈௦勶⧾糾⭪濣ᠶ〡⮆➳᫾㷤͑浸祑晗檎ဿ姲U㫶瀣猾屐猑۳熜晛䖩ᵩ⮊ㅸ槦᯾䕆前ᬞ䵯᧪ٝ⤞⟬䟩ᱝ᫡瞬碾䞪簆瀷ѩ᛹䡜䁜➜᮱焼呖┊䅖摺磽⛾߳╱濣⮉柫ᦱ⥬寜浭楜䍓樦汎夺ၻ炠噑۲ᡃ擜㹉䠜厾ᨡਜ਼Ⓣ㕐妥ㅷ⛾⿽ᮆ㥣珩䷯䢠㹦ᝲ⇪࣢㡡ୂ命ંᱯ࠲㧴䥒䑗݈٥暎ᮿ䤎泏㮊浱Ս⛄礚㭿硖໦炦䉆筆泷Ⰺ䵊⫆➸婊煬⬱寫ᔩ㽮奒瀷点澢⧺歼摁᰷燥❋獒Ṧ✺羫撝˖娒⋌௜ᓞ㳨夞᳻ᩪ೰姩䂅᩹㡇壱䯝産羽嗡㾲时㹡娼⿋⤩旸棹㓞㟶彝ྞ䥩Ⰹ嵻⛝䵚嚞➢箅暒✩Ͷ䓪♡⥒㫅㯑ూⓑ⹕⨝⵿矦叝⚵牖祊⺆䞞ᳶ皉ñם橿݋䞽堝就ਗ਼縺惚梖⬊♓䔹ᗻ痖ᮋ䒠㮷晪穖ⴞㅹᢆ᥺䔆溋➅箇䬳晎䠦绵⹳禟犺ᮍ䝋㹢涊㫲淶䯶ๆ烗⩪ᄀ⽽㽓磊⯃⮍ᩖئ▍ដ㽸毻♇榑᮫㞩㽻睅巹ⵒ缄碠௺笠哨璉峫礆瀻⒋ῳ碃烇䢚畼㷅晆⸝䔷榐ว䴗Ȧ嗙ⳇ汉乫ⶂ䕊婆畏É㧣掉⨓剀ᤙᤐ䔴⧅᳓㭫㐖㓂ᔍⒽөүனᎻ姶ࣆ捓瘒ナ䲸搙婣⨏ʨ垳扪㠡䪊㛪⛣哚䥢ƶ㴁䃳槝礿╁ஂ番䥅ኹ⑭熵ᠨ㍑棁Ҟ㤰晀嗜㥠劷◈䚡⥍廸䗅Ӱ䐴⡴֠硦Ȱ┤⬴◛䨀勝ۜ㲀ࢺ傮㕀哉䂍Ű䎙䠚撎䜈掳ὼݸ-㞄.牀由墺ᎡᑌⳄ嫰ΨΎฑ煿ல樹㸡᝜ⅹൟᬦ࢒わᲰ缹⇎អٴ䰌癖⥟ᅨ牢⩆♱䣣ⓚ掫猔ⅵ⣸璷乚㼿յ㲔ศ⌊凫樳䁕厸㔩ᢰᝉ᧚⪀㖗䄴⸵Ⓘ䇹媶ℍᏱ⛕ɹ㒫ഖင獧Ṉ惼⑯攫᧛䕃焻າ⽽◼灍爈߱夽䥰ᭀ汕䐂ᄥ㭥俱ᆂ碩䯙ƧĳѤ㔢昈䩰哢ಉ瀇ᓇ⊂徳祃久畏ᦜ楪剬䯢惨䱿ၲ㥑ᡄ⪰序䥷ᶒ橗眪ᒀ拢橥噏斃ᤴẓ斗Ⳅᩨ焔ᕊ祓⭈翩஥Т԰  ";
+                        datavzrd.load_plot(specs, data, false);
+                        
+                        
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Error when calling custom function for column <b id="error-column"></b> (please fix the function definition in the datavzrd config):</p>
+                    <pre id="error-modal-text"></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <nav class="navbar navbar-expand navbar-light navbar-top">
+            <a class="navbar-brand" href="#">datavzrd</a>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/datavzrd/datavzrd/blob/master/CHANGELOG.md">2.61.10</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/datavzrd/datavzrd">github</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                        created Mon Dec  1 15:33:10 2025
+                    </span>
+            </div>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>
